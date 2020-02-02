@@ -83,6 +83,7 @@
                 <h1>Bismillah</h1>
                 <ul>
                 <li><a href="{{ route('tentangsaya') }}">About</a></li>
+                <li><a href="{{ route('contacts') }}">Contacts</a></li>
                     <li><a href="/galeri">Galeri</a></li>
                     <li>Galeri</li>
                 </ul>

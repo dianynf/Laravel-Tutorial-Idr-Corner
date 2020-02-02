@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Contact;
 
 class PageController extends Controller
 {
@@ -25,5 +26,12 @@ class PageController extends Controller
     public function galeri()
     {
         return view('geleri');
+    }
+
+    public function contacts(){
+        $contacts=Contact::all();
+        //cara pertama dan ke dua
+        //return view('contacts')->withContacts($contacts);
+        return view('contacts', compact('contacts'));
     }
 }

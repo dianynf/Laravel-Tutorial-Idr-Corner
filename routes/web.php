@@ -16,5 +16,6 @@ Route::get('/', function () {
 });
 
 Route::get('/about', 'PageController@about')->name('tentangsaya');
+Route::get('/contacts', 'PageController@contacts')->name('contacts');
 
 Route::get('/galeri', 'PageController@galeri');
