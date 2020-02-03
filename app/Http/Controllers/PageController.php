@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Contact;
+use App\Http\Requests\TambahContactRequest;
 
 class PageController extends Controller
 {
@@ -33,5 +34,32 @@ class PageController extends Controller
         //cara pertama dan ke dua
         //return view('contacts')->withContacts($contacts);
         return view('contacts', compact('contacts'));
+    }
+
+    public function tambahcontact(){
+        return view('formcontact');
+    }
+
+    public function prosestambah(TambahContactRequest $request){
+        Contact::create([
+                'nama' => $request->nama,
+                'alamat' => $request->alamat,
+                'tlp' => $request->tlp,
+        ]);
+
+        return redirect(route('contacts'));
+    }
+
+    public function editcontact(Contact $contact){
+        return view('formcontact')->withContact($contact);
+    }
+    //sudah berdasarkan id
+    public function prosesedit(TambahContactRequest $request, Contact $contact){
+        $contact->update([
+            'nama' => $request->nama,
+                'alamat' => $request->alamat,
+                'tlp' => $request->tlp,
+        ]);
+        return redirect(route('contacts'));
     }
 }

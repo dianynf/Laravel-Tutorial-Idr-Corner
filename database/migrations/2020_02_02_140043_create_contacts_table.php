@@ -47,3 +47,6 @@ class CreateContactsTable extends Migration
 
 // dan perintah update datanya
 // php artisan db:seed
+
+// membuat create
+// php artisan make:request TambahContactRequest
