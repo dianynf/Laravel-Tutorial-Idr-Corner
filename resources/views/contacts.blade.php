@@ -14,13 +14,17 @@
     </tr>
     @foreach ($contacts as $index=>$con)
         <tr>
-        <td>{{$index + 1}}</td>
-        <td>{{$con->nama}}</td>
-        <td>{{$con->alamat}}</td>
-        <td>{{$con->tlp}}</td>
-        <td>
-        <a href="{{ route('edit.contact', $con->id) }}" class="btn btn-warning">Edit</a>
-        </td>
+            <td>{{$index + 1}}</td>
+            <td>{{$con->nama}}</td>
+            <td>{{$con->alamat}}</td>
+            <td>{{$con->tlp}}</td>
+            <td>
+                <a href="{{ route('edit.contact', $con->id) }}" class="btn btn-warning">Edit</a>
+                    <form action="{{ route('delete.contact', $con->id) }}" method="POST">
+                        @method('DELETE')
+                        <input type="submit" class="btn btn-danger" value="DELETE">
+                    </form>
+            </td>
         </tr>
     @endforeach
     
