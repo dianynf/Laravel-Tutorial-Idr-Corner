@@ -62,4 +62,10 @@ class PageController extends Controller
         ]);
         return redirect(route('contacts'));
     }
+
+
+    public function deletecontact(Contact $contact){
+        $contact->delete();
+        return redirect(route('contacts'));
+    }
 }

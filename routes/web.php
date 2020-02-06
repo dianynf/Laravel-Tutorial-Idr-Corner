@@ -21,7 +21,6 @@ Route::get('/tambahcontact', 'PageController@tambahcontact')->name('tambah.conta
 Route::post('/prosestambah', 'PageController@prosestambah')->name('proses.tambah');
 Route::get('/editcontact/{contact}', 'PageController@editcontact')->name('edit.contact');
 Route::patch('/editcontact/{contact}', 'PageController@prosesedit')->name('proses.edit');
-Route::delete('/deletecontact/{contact}', 'PageController@delete')->name('delete.contact');
-
+Route::delete('/deletecontact/{contact}', 'PageController@deletecontact')->name('delete.contact'); // {contact} untuk menangkap id ny
 
 Route::get('/galeri', 'PageController@galeri');
