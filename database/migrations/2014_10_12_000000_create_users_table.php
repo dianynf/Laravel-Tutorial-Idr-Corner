@@ -34,3 +34,16 @@ class CreateUsersTable extends Migration
         Schema::dropIfExists('users');
     }
 }
+
+// ===================
+//  pembuatan user
+//=====================
+// php artisan migrate
+//  composer require laravel/ui
+//  php artisan ui vue --auth
+//  npm install && npm run dev
+//  php artisan migrate
+
+//untuk membuat Controller folder admin->file UserController dibuatin use langsung di dalam file controller, dan database user
+//======================
+// php artisan make:controller \\Admin\\UsersController -r -mUser

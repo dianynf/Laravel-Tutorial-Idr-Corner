@@ -24,3 +24,7 @@ Route::patch('/editcontact/{contact}', 'PageController@prosesedit')->name('prose
 Route::delete('/deletecontact/{contact}', 'PageController@deletecontact')->name('delete.contact'); // {contact} untuk menangkap id ny
 
 Route::get('/galeri', 'PageController@galeri');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
