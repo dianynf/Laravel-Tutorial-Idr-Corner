@@ -28,3 +28,5 @@ Route::get('/galeri', 'PageController@galeri');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('/admin/users',)
