@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+{{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -45,5 +45,57 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
+
+<section class="content">
+    <div class="row">
+      <div class="col-xs-12">
+
+		<div class="box box-info">
+			<div class="box-header with-border">
+				<h3 class="box-title">Daftar Alumni</h3>
+				<button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#defaultModal"><i class="fa fa-plus"></i> Tambah Alumni</button>
+			</div>
+			<div class="box-body">
+				<div class="col-md-12">
+					<div class="box-body" style="overflow-x: auto;">
+						<table id="example1" class="table table-bordered table-striped">
+							<thead>
+								<th width="5px">No</th>
+                                <th>Name</th>
+                                <th width="12px">Email</th>
+                                <th>Role</th>
+                                <th>Actions</th>
+							</thead>
+							<tbody>
+                                @foreach ($users as $user)
+                          <tr>
+                          <th scope="row">{{$user->id}}</th>
+                            <td>{{ $user->name}}</td>
+                            <td>{{ $user->email }}</td>
+                          <td>{{implode(', ', $user->roles()->get()->pluck('name')->toArray()) }}</td>
+                            <td>
+                                @can('edit-users')
+                                    <a href="{{route('admin.users.edit', $user->id)}}"><button type="button" class="btn btn-primary">Edit</button></a>
+                                @endcan
+                                @can('delete-users')
+                                    <form action="{{route('admin.users.destroy', $user)}}" method="POST">
+                                @csrf
+                                {{ method_field('DELETE') }}
+                                <button type="button" class="btn btn-warning">Delete</button>
+                                @endcan
+                            </form>
+                            </td>
+                          </tr>
+                        @endforeach
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
 @endsection
