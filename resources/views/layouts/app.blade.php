@@ -254,9 +254,11 @@
             </ul>
           </li>
           <li><a href="#"><i class="fa fa-suitcase"></i> <span>Lowongan Kerja</span></a></li>
-          <li><a href="{{route('admin.users.index')}}"><i class="fa fa-suitcase"></i> <span>Users</span></a></li>
+          @can('manage-users')
+          <li><a href="{{route('admin.users.index')}}"><i class="fa fa-users"></i> <span>Users</span></a></li>
+          @endcan
           <li><a href="#"><i class="fa fa-sign-in"></i> <span>Keluar</span></a></li>
-    </section>admin.users.edit
+    </section>
     <!-- /.sidebar -->
   </aside>
 
