@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BeasiswaRequest extends FormRequest
+class AlumniRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,7 @@ class BeasiswaRequest extends FormRequest
     public function rules()
     {
         return [
-            'nama' => 'required|max:30',
-            'keterangan' => 'required|max:255'
+            //
         ];
     }
 }

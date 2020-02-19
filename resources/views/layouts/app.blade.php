@@ -124,6 +124,13 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+    <style>
+        th{
+            text-align: center;
+            font-size: 15px;
+        }
+    </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -227,7 +234,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li><a href="#"><i class="fa fa-dashboard"></i> <span>Informasi</span></a></li>
+      <li><a href="{{route('informasi.index')}}"><i class="fa fa-dashboard"></i> <span>Informasi</span></a></li>
         <li class="treeview">
             <a href="#">
               <i class="fa fa-edit"></i> <span>Profile</span>
@@ -256,7 +263,8 @@
           <li><a href="#"><i class="fa fa-suitcase"></i> <span>Lowongan Kerja</span></a></li>
           @can('manage-users')
           <li><a href="{{route('beasiswa.index')}}"><i class="fa fa-users"></i> <span>Beasiswa</span></a></li>
-          <li><a href="{{route('admin.users.index')}}"><i class="fa fa-users"></i> <span>Users</span></a></li>
+          <li><a href="{{route('alumni.index')}}"><i class="fa fa-users"></i> <span>Alumni</span></a></li>
+          <li><a href="{{route('admin.users.index')}}"><i class="fa fa-user"></i> <span>Users</span></a></li>
           @endcan
           <li><a href="#"><i class="fa fa-sign-in"></i> <span>Keluar</span></a></li>
     </section>

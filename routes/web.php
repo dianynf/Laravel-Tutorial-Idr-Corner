@@ -36,4 +36,6 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:mana
 
 // Route::resource('/prodi', 'ProdiController');
 Route::resource('/beasiswa', 'BeasiswaController');
+Route::resource('/informasi', 'InformasiController');
+Route::resource('/alumni', 'AlumniController');
 // Route::resource('/mahasiswa', 'MahasiswaController');
