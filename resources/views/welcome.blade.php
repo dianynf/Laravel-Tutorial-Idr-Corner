@@ -68,12 +68,8 @@
       </div>
     </nav>
   </header>
-  <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
-      <!-- search form -->
-      <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li><a href="#"><i class="fa fa-dashboard"></i> <span>Informasi</span></a></li>
@@ -102,10 +98,7 @@
               <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
             </ul>
           </li>
-          <li><a href="#"><i class="fa fa-suitcase"></i> <span>Lowongan Kerja</span></a></li>
-          {{-- <li><a href="#"><i class="fa fa-sign-in"></i> <span>Login</span></a></li> --}}
-    </section>
-    <!-- /.sidebar -->
+          <li><a href="#"><i class="fa fa-suitcase"></i> <span>Lowongan Kerja</span></a></li>    </section>
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
