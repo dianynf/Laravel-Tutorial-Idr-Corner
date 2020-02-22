@@ -141,9 +141,9 @@
                 </div>
               </form>
             </div>
-            <!-- /.box -->
+
           </div>
-          <!--/.col (right) -->
+
         </div>
         <!-- /.row -->
       </section>
