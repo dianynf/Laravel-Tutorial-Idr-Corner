@@ -24,7 +24,9 @@ class AlumniRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'nama' => 'required|max:30',
+            'alamat' => 'required',
+            'tlp' => 'required|numeric'
         ];
     }
 }
