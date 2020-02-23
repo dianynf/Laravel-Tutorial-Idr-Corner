@@ -25,8 +25,7 @@ class AlumniRequest extends FormRequest
     {
         return [
             'nama' => 'required|max:30',
-            'alamat' => 'required',
-            'tlp' => 'required|numeric'
+            'keterangan' => 'required'
         ];
     }
 }

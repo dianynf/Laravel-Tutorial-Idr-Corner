@@ -119,4 +119,10 @@ class UsersController extends Controller
 
         return redirect()->route('admin.users.index');
     }
+
+    public function restore($id)
+    {
+        Post::onlyTrashed()->where('id', $id)->restore();
+        return redirect()->route('admin.users.index')->withsuccess('Data berhasil di kembalikan');
+    }
 }

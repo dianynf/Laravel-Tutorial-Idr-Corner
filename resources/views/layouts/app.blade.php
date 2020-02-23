@@ -262,7 +262,18 @@
           </li>
           <li><a href="#"><i class="fa fa-suitcase"></i> <span>Lowongan Kerja</span></a></li>
           @can('manage-users')
-          <li><a href="{{route('beasiswa.index')}}"><i class="fa fa-users"></i> <span>Beasiswa</span></a></li>
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-server"></i> <span>Kategori</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="{{route('beasiswa.index')}}"><i class="fa fa-circle-o"></i> Beasiswa</a></li>
+              <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Program Studi</a></li>
+            </ul>
+        </li>
           <li><a href="{{route('alumni.index')}}"><i class="fa fa-users"></i> <span>Alumni</span></a></li>
           <li><a href="{{route('admin.users.index')}}"><i class="fa fa-user"></i> <span>Users</span></a></li>
           @endcan
