@@ -54,7 +54,7 @@ class CreateContactsTable extends Migration
 
 
 // catatan compile terminal
-// php artisan make:controller PageController = cara membuat controller
+//  php artisan make:controller AlumniController --resource = cara membuat controller
 // php artisan make:model Contact -m  = membuat Model dan migrate modelnya dgn -m
 // php artisan migrate  = perintah untuk update database yg kita buat dari codingan
 
@@ -73,10 +73,15 @@ class CreateContactsTable extends Migration
 //untuk link dari storege ke public karena folder storage tdk boleh di akses sembarangan untuk image(file) dan edit file .env
 // php artisan storage:link
 
-
+//php artisan route:list
 // untuk refresh database
 //php artisan migrate:refresh
 
 //untuk melihat database jadi tidak perlu liat dari phpmysqmin dan langsng bisa liat errornya dimana
 //php artisan tinker
 //App\Kategori::all()  ->perintah untuk liat database menggnakan query
+
+// php artisan make:controller AlumniController --resource
+// php artisan make:request AlumniRequest
+// php artisan make:model Alumni -m
+// php artisan migrate

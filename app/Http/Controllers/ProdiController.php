@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Beasiswa;
-use App\Http\Requests\BeasiswaRequest;
+use App\Prodi;
+use App\Http\Requests\ProdiRequest;
 
-class BeasiswaController extends Controller
+class ProdiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class BeasiswaController extends Controller
      */
     public function index()
     {
-        return view('beasiswa.index')->withBeasiswas(Beasiswa::all());
+        return view('prodi.index')->withProdis(Prodi::all());
     }
 
     /**
@@ -25,7 +25,7 @@ class BeasiswaController extends Controller
      */
     public function create()
     {
-        return view('beasiswa.form');
+        return view('prodi.form');
     }
 
     /**
@@ -34,15 +34,13 @@ class BeasiswaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(BeasiswaRequest $request)
+    public function store(ProdiRequest $request)
     {
-        Beasiswa::create([
-            'nama' => $request->nama,
-            'keterangan' => $request->keterangan
-
+        Prodi::create([
+            'nama' => $request->nama
         ]);
-        session()->flash('sukses', 'Data Berhasil Di Tambahkan');
-        return redirect(route('beasiswa.index'));
+        session()->flash('sukses', 'Data berhasil Ditambahkan');
+        return redirect(route('prodi.index'));
     }
 
     /**
@@ -62,9 +60,9 @@ class BeasiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Beasiswa $beasiswa)
+    public function edit(Prodi $prodi)
     {
-        return view('beasiswa.form')->withBeasiswa($beasiswa);
+        return view('prodi.form')->withProdi($prodi);
     }
 
     /**
@@ -74,15 +72,14 @@ class BeasiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(BeasiswaRequest $request, Beasiswa $beasiswa)
+    public function update(ProdiRequest $request, Prodi $prodi)
     {
-        $beasiswa->update([
-            'nama' => $request->nama,
-            'keterangan' => $request->keterangan
+        $prodi->update([
+            'nama' => $request->nama
         ]);
 
-        session()->flash('sukses', 'beasiswa berhasil di ubah');
-        return redirect(route('beasiswa.index'));
+        session()->flash('sukses', 'prodi berhasil di ubah');
+        return redirect(route('prodi.index'));
     }
 
     /**
@@ -91,10 +88,10 @@ class BeasiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Beasiswa $beasiswa)
+    public function destroy(Prodi $prodi)
     {
-        $beasiswa->delete();
-        session()->flash('sukses', 'beasiswa berhasil di hapus');
-        return redirect(route('beasiswa.index'));
+        $prodi->delete();
+        session()->flash('sukses', 'prodi berhasil di hapus');
+        return redirect(route('prodi.index'));
     }
 }

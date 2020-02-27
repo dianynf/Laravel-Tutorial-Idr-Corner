@@ -128,7 +128,6 @@
     <style>
         th{
             text-align: center;
-            font-size: 15px;
         }
     </style>
 </head>
@@ -271,7 +270,7 @@
             </a>
             <ul class="treeview-menu">
               <li><a href="{{route('beasiswa.index')}}"><i class="fa fa-circle-o"></i> Beasiswa</a></li>
-              <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Program Studi</a></li>
+              <li><a href="{{route('prodi.index')}}"><i class="fa fa-circle-o"></i> Program Studi</a></li>
             </ul>
         </li>
           <li><a href="{{route('alumni.index')}}"><i class="fa fa-users"></i> <span>Alumni</span></a></li>
@@ -494,6 +493,30 @@
 
     </div>
 
+    <div class="modal" id="modalDelete" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <form action="" method="POST" id="formDelete">
+              @csrf
+              @method('DELETE')
+            <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Konformasi Delete</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Apakah anda yakin menghapus <span id="ket"></span> ?</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                  <button type="submit" class="btn btn-primary">Ok Delete</button>
+                </div>
+            </div>
+          </form>
+        </div>
+    </div>
+
 <!-- jQuery 3 -->
 <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -546,8 +569,10 @@
             'autoWidth': false
         })
     })
-
 </script>
+
+@yield('script')
+@yield('partials.alerts')
 </body>
 </html>
 

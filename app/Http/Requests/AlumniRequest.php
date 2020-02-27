@@ -25,7 +25,18 @@ class AlumniRequest extends FormRequest
     {
         return [
             'nama' => 'required|max:30',
-            'keterangan' => 'required'
+            'jk' => 'required',
+            'tmp_lahir' => 'required|max:45',
+            'tlg_lahir' => 'required',
+            'email' => 'required|email',
+            'no_hp' => 'required',
+            'alamat' => 'required|max:255',
+            'foto' => 'required',
+            'angkatan' => 'required',
+            'status_kerja' => 'required',
+            'tmp_kerja' => 'required',
+            'beasiswa_id' => 'required',
+            'prodi_id' => 'required'
         ];
     }
 }

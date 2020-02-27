@@ -35,7 +35,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:mana
     //Route::get('/restore/{id}', 'UsersController@restore')->name('post.restore');
 });
 
-// Route::resource('/prodi', 'ProdiController');
+Route::resource('/prodi', 'ProdiController');
 Route::resource('/beasiswa', 'BeasiswaController');
 Route::resource('/informasi', 'InformasiController');
 Route::resource('/alumni', 'AlumniController');

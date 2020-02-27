@@ -15,7 +15,7 @@ class AlumniController extends Controller
      */
     public function index()
     {
-        return view('alumni')->withAlumnis(Alumni::all());
+        return view('alumni.index')->withAlumnis(Alumni::all());
     }
 
     /**
@@ -25,7 +25,7 @@ class AlumniController extends Controller
      */
     public function create()
     {
-        //
+        return view('alumni.form');
     }
 
     /**
@@ -34,9 +34,25 @@ class AlumniController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AlumniRequest $request)
     {
-        //
+        Alumni::create([
+            'nama' => $request->nama,
+            'jk' => $request->jk,
+            'tmp_lahir' => $request->tmp_lahir,
+            'tgl_lahir' => $request->tgl_lahir,
+            'email' => $request->email,
+            'no_hp' => $request->no_hp,
+            'alamat' => $request->alamat,
+            'foto' => $request->foto,
+            'angkatan' => $request->angkatan,
+            'status_kerja' => $request->status_kerja,
+            'tmp_kerja' => $request->tmp_kerja,
+            'beasiswa_id' => $request->beasiswa_id,
+            'alumni_id' => $request->alumni_id
+        ]);
+        session()->flash('sukses', 'Data Berhasil Di Tambahkan');
+        return redirect(route('alumni.index'));
     }
 
     /**
@@ -56,9 +72,9 @@ class AlumniController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Alumni $alumni)
     {
-        //
+        return view('alumni.form')->withAlumni($alumni);
     }
 
     /**
@@ -68,9 +84,26 @@ class AlumniController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AlumniRequest $request, Alumni $alumni)
     {
-        //
+        $alumni::update([
+            'nama' => $request->nama,
+            'jk' => $request->jk,
+            'tmp_lahir' => $request->tmp_lahir,
+            'tgl_lahir' => $request->tgl_lahir,
+            'email' => $request->email,
+            'no_hp' => $request->no_hp,
+            'alamat' => $request->alamat,
+            'foto' => $request->foto,
+            'angkatan' => $request->angkatan,
+            'status_kerja' => $request->status_kerja,
+            'tmp_kerja' => $request->tmp_kerja,
+            'beasiswa_id' => $request->beasiswa_id,
+            'alumni_id' => $request->alumni_id
+        ]);
+
+        session()->flash('sukses', 'alumni berhasil di ubah');
+        return redirect(route('alumni.index'));
     }
 
     /**
@@ -79,8 +112,10 @@ class AlumniController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Alumni $alumni)
     {
-        //
+        $alumni->delete();
+        session()->flash('sukses', 'alumni berhasil di hapus');
+        return redirect(route('alumni.index'));
     }
 }
