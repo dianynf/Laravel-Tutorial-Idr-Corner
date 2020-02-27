@@ -29,53 +29,97 @@
             <div class="box-body">
                 <div class="form-group">
                     <label for="name">Nama Lengkap</label>
-                    <input type="text" name="nama" id="nama" class="form-control" value="{{isset($alumni)? $alumni->nama : old('nama')}}">
+                    <input type="text" placeholder="Nama Lengkap" name="nama" id="nama" class="form-control" value="{{isset($alumni)? $alumni->nama : old('nama')}}">
                 </div>
                 <div class="form-group">
-                    <label class="radio inline">
-                        <input type="radio" class="jk" name="jk" id="jk" value="1" checked value="{{isset($alumni)? $alumni->jk : old('jk')}}">
-                        <span>Laki - Laki &nbsp; &nbsp; &nbsp;</span>
-                    </label>
-                    <label class="radio inline">
-                        <input type="radio" class="jk" name="jk" id="jk" value="0" value="{{isset($alumni)? $alumni->jk : old('jk')}}">
+                    <label for="name">Jenis Kelamin</label><br>
+                    {{-- <div class="radio"> --}}
+                      <label>
+                        <input type="radio" class="flat-red" name="jk" id="jk" value="1" checked value="{{isset($alumni)? $alumni->jk : old('jk')}}">
+                        <span>Laki - Laki</span>
+                      </label>
+                      <label>
+                        <input type="radio" class="flat-red" name="jk" id="jk" value="0" value="{{isset($alumni)? $alumni->jk : old('jk')}}">
                         <span>Perempuan</span>
-                    </label>
+                      </label>
+                    {{-- </div> --}}
                 </div>
-                <div class="form-group">
-                    <label for="name">Tempat Lahir</label>
-                    <input type="text" name="tmp_lahir" id="tmp_lahir" class="form-control" value="{{isset($alumni)? $alumni->tmp_lahir : old('tmp_lahir')}}">
-                </div>
+                    <div class="form-group">
+                        <label for="name">Tempat Lahir</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <i class="fa fa-map-marker"></i>
+                            </div>
+                            <input type="text" placeholder="Tempat Lahir" name="tmp_lahir" id="tmp_lahir" class="form-control" value="{{isset($alumni)? $alumni->tmp_lahir : old('tmp_lahir')}}">
+                        </div>
+                    </div>
                 <div class="form-group">
                     <label for="name">Tanggal Lahir</label>
-                    <input type="date" name="tgl_lahir" id="tgl_lahir" class="form-control" value="{{isset($alumni)? $alumni->tgl_lahir : old('tgl_lahir')}}">
-                </div>
+
+                    <div class="input-group date">
+                      <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                      </div>
+                      <input type="text" placeholder="Tanggal Lahir" class="form-control pull-right" id="datepicker" name="tgl_lahir" id="tgl_lahir" class="form-control" value="{{isset($alumni)? $alumni->tgl_lahir : old('tgl_lahir')}}">
+                    </div>
+                    <!-- /.input group -->
+                  </div>
                 <div class="form-group">
                     <label for="name">Email</label>
-                    <input type="email" name="email" id="email" class="form-control" value="{{isset($alumni)? $alumni->email : old('email')}}">
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                          <i class="fa fa-envelope"></i>
+                        </div>
+                        <input type="email" name="email" placeholder="Email"  id="email" class="form-control" value="{{isset($alumni)? $alumni->email : old('email')}}">
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="name">NO HP</label>
-                    <input type="number" name="no_hp" id="no_hp" class="form-control" value="{{isset($alumni)? $alumni->no_hp : old('no_hp')}}">
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                          <i class="fa fa-phone"></i>
+                        </div>
+                        <input type="number" name="no_hp" placeholder="Nomor Hanphone" id="no_hp" class="form-control" value="{{isset($alumni)? $alumni->no_hp : old('no_hp')}}">
+                      </div>
                 </div>
                 <div class="form-group">
                     <label for="name">Alamat</label>
-                    <input type="text" name="alamat" id="alamat" class="form-control" value="{{isset($alumni)? $alumni->alamat : old('alamat')}}">
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                          <i class="fa fa-map-marker"></i>
+                        </div>
+                        <input type="text" placeholder="Alamat" name="alamat" id="alamat" class="form-control" value="{{isset($alumni)? $alumni->alamat : old('alamat')}}">
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="name">Foto</label>
-                    <input type="file" name="foto" id="foto" class="form-control" value="{{isset($alumni)? $alumni->foto : old('foto')}}">
-                </div>
+                    <label for="exampleInputFile">Foto</label>
+                    <input type="file" name="foto" id="foto" value="{{isset($alumni)? $alumni->foto : old('foto')}}">
+
+                    <p class="help-block">Foto Profile Anda sebaiknya memiliki rasio 1:1 dan berukuran tidak lebih dari 2MB.</p>
+                  </div>
                 <div class="form-group">
                     <label for="name">Angkatan</label>
-                    <input type="text" name="angkatan" id="angkatan" class="form-control" value="{{isset($alumni)? $alumni->angkatan : old('angkatan')}}">
+                    <input type="number" placeholder="Angkatan" name="angkatan" id="angkatan" class="form-control" value="{{isset($alumni)? $alumni->angkatan : old('angkatan')}}">
                 </div>
                 <div class="form-group">
-                    <label for="name">Status Kerja</label>
-                    <input type="text" name="status_kerja" id="status_kerja" class="form-control" value="{{isset($alumni)? $alumni->status_kerja : old('status_kerja')}}">
+                    <label for="name">Status Kerja</label><br>
+                    <label>
+                        <input type="radio" class="flat-red" checked name="status_kerja" id="status_kerja" class="form-control" value="{{isset($alumni)? $alumni->status_kerja : old('status_kerja')}}">
+                        <span>Berkerja</span>
+                    </label>
+                    <label>
+                        <input type="radio" class="flat-red" name="status_kerja" id="status_kerja" class="form-control" value="{{isset($alumni)? $alumni->status_kerja : old('status_kerja')}}">
+                        <span>Belum Berkerja</span>
+                    </label>
                 </div>
                 <div class="form-group">
                     <label for="name">Tempat Kerja</label>
-                    <input type="text" name="tmp_kerja" id="tmp_kerja" class="form-control" value="{{isset($alumni)? $alumni->tmp_kerja : old('tmp_kerja')}}">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-map-marker"></i>
+                      </div>
+                    <input type="text" placeholder="Tempat Kerja" name="tmp_kerja" id="tmp_kerja" class="form-control" value="{{isset($alumni)? $alumni->tmp_kerja : old('tmp_kerja')}}">
+                  </div>
                 </div>
                 <div class="form-group">
                     <label for="name">Pilih Jenis Beastudi</label>
