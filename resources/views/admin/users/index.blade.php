@@ -85,6 +85,7 @@
                                 <button type="button" class="btn btn-warning">Delete</button>
                                 @endcan
                             </form>
+
                             </td>
                           </tr>
                         @endforeach
