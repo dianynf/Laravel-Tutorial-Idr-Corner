@@ -122,9 +122,12 @@
                   </div>
                 </div>
                 <div class="form-group">
-                    <label for="name">Pilih Jenis Beastudi</label>
-                    <input type="text" name="beastudi_id" id="beastudi_id" class="form-control" value="{{isset($alumni)? $alumni->beastudi_id : old('beastudi_id')}}">
-                </div>
+                    <label for="kategori_id">Pilih Jenis Beastudi</label>
+                    <select name="kategori_id" id="kategori_id" class="form-control">
+                        @foreach ($prodis as $prodi)
+                    <option value="{{ $prodi->id}}">{{$prodi->nama}}</option>
+                        @endforeach
+                    </select>
                 <div class="form-group">
                     <label for="name">Pilih Jenis Prodi</label>
                     <input type="text" name="prodi_id" id="prodi_id" class="form-control" value="{{isset($alumni)? $alumni->prodi_id : old('prodi_id')}}">

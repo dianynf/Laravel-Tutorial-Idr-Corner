@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Alumni;
+use App\Prodi;
+use App\Beasiswa;
+
 use App\Http\Requests\AlumniRequest;
 
 class AlumniController extends Controller
@@ -25,7 +28,7 @@ class AlumniController extends Controller
      */
     public function create()
     {
-        return view('alumni.form');
+        return view('alumni.form')->withProdis(Prodi::all());
     }
 
     /**
