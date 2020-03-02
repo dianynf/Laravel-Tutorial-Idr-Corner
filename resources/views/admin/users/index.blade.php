@@ -52,12 +52,12 @@
       <div class="col-xs-12">
 
 		<div class="box box-info">
-			<div class="box-header with-border">
-				<h3 class="box-title">Daftar Alumni</h3>
-				<button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#defaultModal"><i class="fa fa-plus"></i> Tambah Alumni</button>
-			</div>
-			<div class="box-body">
-				<div class="col-md-12">
+            <div class="box-body">
+                <div class="col-md-12">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Daftar Alumni</h3>
+                        <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#defaultModal">Tambah Alumni</button>
+                    </div>
 					<div class="box-body" style="overflow-x: auto;">
 						<table id="example1" class="table table-bordered table-striped">
 							<thead>
