@@ -21,7 +21,8 @@
           </div>
           <!-- /.box-header -->
           <!-- form start -->
-          <form action="{{isset($alumni)? route('alumni.update', $alumni->id) : route('alumni.store')}}" method="POST">
+          {{-- enctype untuk upload file --}}
+          <form action="{{isset($alumni)? route('alumni.update', $alumni->id) : route('alumni.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
             @if (isset($alumni))
                 @method('PATCH')
@@ -33,15 +34,16 @@
                 </div>
                 <div class="form-group">
                     <label for="name">Jenis Kelamin</label><br>
+                    <input type="text" placeholder="jk" name="jk" id="jk" class="form-control" value="{{isset($alumni)? $alumni->jk : old('jk')}}">
                     {{-- <div class="radio"> --}}
-                      <label>
+                      {{-- <label>
                         <input type="radio" class="flat-red" name="jk" id="jk" value="1" checked value="{{isset($alumni)? $alumni->jk : old('jk')}}">
                         <span>Laki - Laki</span>
                       </label>
                       <label>
                         <input type="radio" class="flat-red" name="jk" id="jk" value="0" value="{{isset($alumni)? $alumni->jk : old('jk')}}">
                         <span>Perempuan</span>
-                      </label>
+                      </label> --}}
                     {{-- </div> --}}
                 </div>
                     <div class="form-group">
@@ -103,14 +105,15 @@
                 </div>
                 <div class="form-group">
                     <label for="name">Status Kerja</label><br>
-                    <label>
+                    <input type="text" placeholder="status_kerja" name="status_kerja" id="status_kerja" class="form-control" value="{{isset($alumni)? $alumni->status_kerja : old('status_kerja')}}">
+                    {{-- <label>
                         <input type="radio" class="flat-red" checked name="status_kerja" id="status_kerja" class="form-control" value="{{isset($alumni)? $alumni->status_kerja : old('status_kerja')}}">
                         <span>Berkerja</span>
                     </label>
                     <label>
                         <input type="radio" class="flat-red" name="status_kerja" id="status_kerja" class="form-control" value="{{isset($alumni)? $alumni->status_kerja : old('status_kerja')}}">
                         <span>Belum Berkerja</span>
-                    </label>
+                    </label> --}}
                 </div>
                 <div class="form-group">
                     <label for="name">Tempat Kerja</label>
@@ -123,14 +126,18 @@
                 </div>
                 <div class="form-group">
                     <label for="kategori_id">Pilih Jenis Beastudi</label>
-                    <select name="kategori_id" id="kategori_id" class="form-control">
-                        @foreach ($prodis as $prodi)
-                    <option value="{{ $prodi->id}}">{{$prodi->nama}}</option>
+                    <select name="beasiswa_id" id="beasiswa_id" class="form-control">
+                        @foreach ($beasiswas as $beasiswa)
+                    <option value="{{ $beasiswa->id}}">{{$beasiswa->nama}}</option>
                         @endforeach
                     </select>
                 <div class="form-group">
                     <label for="name">Pilih Jenis Prodi</label>
-                    <input type="text" name="prodi_id" id="prodi_id" class="form-control" value="{{isset($alumni)? $alumni->prodi_id : old('prodi_id')}}">
+                    <select name="prodi_id" id="prodi_id" class="form-control">
+                        @foreach ($prodis as $prodi)
+                    <option value="{{ $prodi->id}}">{{$prodi->nama}}</option>
+                        @endforeach
+                    </select>
                 </div>
 
                 <div class="form-group">

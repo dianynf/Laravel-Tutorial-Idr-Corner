@@ -28,7 +28,12 @@ class AlumniController extends Controller
      */
     public function create()
     {
-        return view('alumni.form')->withProdis(Prodi::all());
+        //untuk relasi banyak tebel, masukkan terlebih dahulu data2 ke dalam variabel
+        $prodis = Prodi::all();
+        $beasiswas = Beasiswa::all();
+
+        return view('alumni.form', compact('prodis', 'beasiswas'));
+        // return view('alumni.form')->withProdis(Prodi::all());
     }
 
     /**
@@ -39,6 +44,7 @@ class AlumniController extends Controller
      */
     public function store(AlumniRequest $request)
     {
+        $request->foto->store('img');
         Alumni::create([
             'nama' => $request->nama,
             'jk' => $request->jk,
@@ -52,7 +58,7 @@ class AlumniController extends Controller
             'status_kerja' => $request->status_kerja,
             'tmp_kerja' => $request->tmp_kerja,
             'beasiswa_id' => $request->beasiswa_id,
-            'alumni_id' => $request->alumni_id
+            'prodi_id' => $request->prodi_id
         ]);
         session()->flash('sukses', 'Data Berhasil Di Tambahkan');
         return redirect(route('alumni.index'));
