@@ -76,16 +76,15 @@
                           <td>{{implode(', ', $user->roles()->get()->pluck('name')->toArray()) }}</td>
                             <td>
                                 @can('edit-users')
-                                    <a href="{{route('admin.users.edit', $user->id)}}"><button type="button" class="btn btn-primary">Edit</button></a>
+                                    <a href="{{route('admin.users.edit', $user->id)}}" class="btn btn-warning mr-1"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                 @endcan
                                 @can('delete-users')
                                     <form action="{{route('admin.users.destroy', $user)}}" method="POST">
                                 @csrf
                                 {{ method_field('DELETE') }}
-                                <button type="button" class="btn btn-warning">Delete</button>
+                                <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                 @endcan
-                            </form>
-
+                                </form>
                             </td>
                           </tr>
                         @endforeach

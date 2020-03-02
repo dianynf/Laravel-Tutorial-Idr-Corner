@@ -30,10 +30,12 @@
             <div class="box-body">
                 <div class="form-group">
                     <label for="name">Nama Lengkap</label>
+                    @error('nama') <span style="color:red">{{$message}}</span>@enderror
                     <input type="text" placeholder="Nama Lengkap" name="nama" id="nama" class="form-control" value="{{isset($alumni)? $alumni->nama : old('nama')}}">
                 </div>
                 <div class="form-group">
-                    <label for="name">Jenis Kelamin</label><br>
+                    <label for="name">Jenis Kelamin</label>
+                    @error('jk') <span style="color:red">{{$message}}</span>@enderror
                     <input type="text" placeholder="jk" name="jk" id="jk" class="form-control" value="{{isset($alumni)? $alumni->jk : old('jk')}}">
                     {{-- <div class="radio"> --}}
                       {{-- <label>
@@ -48,6 +50,7 @@
                 </div>
                     <div class="form-group">
                         <label for="name">Tempat Lahir</label>
+                        @error('tmp_lahir') <span style="color:red">{{$message}}</span>@enderror
                         <div class="input-group">
                             <div class="input-group-addon">
                             <i class="fa fa-map-marker"></i>
@@ -57,7 +60,7 @@
                     </div>
                 <div class="form-group">
                     <label for="name">Tanggal Lahir</label>
-
+                    @error('tgl_lahir') <span style="color:red">{{$message}}</span>@enderror
                     <div class="input-group date">
                       <div class="input-group-addon">
                         <i class="fa fa-calendar"></i>
@@ -68,6 +71,7 @@
                   </div>
                 <div class="form-group">
                     <label for="name">Email</label>
+                    @error('email') <span style="color:red">{{$message}}</span>@enderror
                     <div class="input-group">
                         <div class="input-group-addon">
                           <i class="fa fa-envelope"></i>
@@ -77,6 +81,7 @@
                 </div>
                 <div class="form-group">
                     <label for="name">NO HP</label>
+                    @error('no_hp') <span style="color:red">{{$message}}</span>@enderror
                     <div class="input-group">
                         <div class="input-group-addon">
                           <i class="fa fa-phone"></i>
@@ -95,16 +100,18 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputFile">Foto</label>
+                    @error('foto') <span style="color:red">{{$message}}</span>@enderror
                     <input type="file" name="foto" id="foto" value="{{isset($alumni)? $alumni->foto : old('foto')}}">
-
                     <p class="help-block">Foto Profile Anda sebaiknya memiliki rasio 1:1 dan berukuran tidak lebih dari 2MB.</p>
                   </div>
                 <div class="form-group">
                     <label for="name">Angkatan</label>
+                    @error('angkatan') <span style="color:red">{{$message}}</span>@enderror
                     <input type="number" placeholder="Angkatan" name="angkatan" id="angkatan" class="form-control" value="{{isset($alumni)? $alumni->angkatan : old('angkatan')}}">
                 </div>
                 <div class="form-group">
                     <label for="name">Status Kerja</label><br>
+                    @error('status_kerja') <span style="color:red">{{$message}}</span>@enderror
                     <input type="text" placeholder="status_kerja" name="status_kerja" id="status_kerja" class="form-control" value="{{isset($alumni)? $alumni->status_kerja : old('status_kerja')}}">
                     {{-- <label>
                         <input type="radio" class="flat-red" checked name="status_kerja" id="status_kerja" class="form-control" value="{{isset($alumni)? $alumni->status_kerja : old('status_kerja')}}">
@@ -117,6 +124,7 @@
                 </div>
                 <div class="form-group">
                     <label for="name">Tempat Kerja</label>
+                    @error('tmp_kerja') <span style="color:red">{{$message}}</span>@enderror
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-map-marker"></i>
@@ -126,6 +134,7 @@
                 </div>
                 <div class="form-group">
                     <label for="kategori_id">Pilih Jenis Beastudi</label>
+                    @error('beasiswa_id') <span style="color:red">{{$message}}</span>@enderror
                     <select name="beasiswa_id" id="beasiswa_id" class="form-control">
                         @foreach ($beasiswas as $beasiswa)
                     <option value="{{ $beasiswa->id}}">{{$beasiswa->nama}}</option>
@@ -133,6 +142,7 @@
                     </select>
                 <div class="form-group">
                     <label for="name">Pilih Jenis Prodi</label>
+                    @error('prodi_id') <span style="color:red">{{$message}}</span>@enderror
                     <select name="prodi_id" id="prodi_id" class="form-control">
                         @foreach ($prodis as $prodi)
                     <option value="{{ $prodi->id}}">{{$prodi->nama}}</option>

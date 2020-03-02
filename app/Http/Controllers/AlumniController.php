@@ -44,7 +44,7 @@ class AlumniController extends Controller
      */
     public function store(AlumniRequest $request)
     {
-        $request->foto->store('img');
+        $image = $request->foto->store('img');
         Alumni::create([
             'nama' => $request->nama,
             'jk' => $request->jk,
@@ -53,7 +53,7 @@ class AlumniController extends Controller
             'email' => $request->email,
             'no_hp' => $request->no_hp,
             'alamat' => $request->alamat,
-            'foto' => $request->foto,
+            'image' => $image,
             'angkatan' => $request->angkatan,
             'status_kerja' => $request->status_kerja,
             'tmp_kerja' => $request->tmp_kerja,
