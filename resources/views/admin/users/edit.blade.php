@@ -49,7 +49,7 @@
                         @endforeach
                     </div>
                     <button type="submit" class="btn btn-primary">
-                        Update
+                        Edit
                     </button>
                     </div>
                 </form>

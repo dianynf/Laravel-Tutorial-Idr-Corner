@@ -8,6 +8,12 @@ use App\Role;
 use Gate;
 use Illuminate\Http\Request;
 
+//untuk crete users
+use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\UserRequest;
+
 class UsersController extends Controller
 {
 
@@ -34,7 +40,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.users.form');
     }
 
     /**
@@ -43,9 +49,15 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
-        //
+        User::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+        ]);
+        session()->flash('sukses', 'Data Berhasil Di Tambahkan');
+        return redirect(route('admin.users.index'));
     }
 
     /**

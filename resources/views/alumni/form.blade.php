@@ -137,7 +137,7 @@
                     @error('beasiswa_id') <span style="color:red">{{$message}}</span>@enderror
                     <select name="beasiswa_id" id="beasiswa_id" class="form-control">
                         @foreach ($beasiswas as $beasiswa)
-                    <option value="{{ $beasiswa->id}}">{{$beasiswa->nama}}</option>
+                            <option value="{{ $beasiswa->id}}">{{$beasiswa->nama}}</option>
                         @endforeach
                     </select>
                 <div class="form-group">
@@ -145,7 +145,7 @@
                     @error('prodi_id') <span style="color:red">{{$message}}</span>@enderror
                     <select name="prodi_id" id="prodi_id" class="form-control">
                         @foreach ($prodis as $prodi)
-                    <option value="{{ $prodi->id}}">{{$prodi->nama}}</option>
+                            <option value="{{ $prodi->id}}">{{$prodi->nama}}</option>
                         @endforeach
                     </select>
                 </div>

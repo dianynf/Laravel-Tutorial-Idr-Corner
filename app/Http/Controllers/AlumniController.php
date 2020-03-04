@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Alumni;
 use App\Prodi;
 use App\Beasiswa;
-
 use App\Http\Requests\AlumniRequest;
 
 class AlumniController extends Controller
