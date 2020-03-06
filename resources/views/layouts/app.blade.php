@@ -83,7 +83,6 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               {{-- <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"> --}}
-              {{-- {{ Auth::user()->name }} --}}
               <span class="hidden-xs">Users</span>
             </a>
             <ul class="dropdown-menu">
@@ -105,48 +104,13 @@
                     <a class="btn btn-default btn-flat" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
+                        Keluar
                     </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
                 </div>
               </li>
-            </ul>
-
-            {{-- <ul class="dropdown-menu">
-                <!-- Authentication Links -->
-                @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                    </li>
-                    @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
-                    @endif
-                @else
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-                            @can('manage-users')
-                            <a href="{{route('admin.users.index')}}" class="dropdown-item">
-                            User Management</a>
-                            @endcan
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </div>
-                    </li>
-                @endguest --}}
             </ul>
           </li>
         </ul>
@@ -164,7 +128,7 @@
       <li><a href="{{route('informasi.index')}}"><i class="fa fa-dashboard"></i> <span>Informasi</span></a></li>
         <li class="treeview">
             <a href="#">
-              <i class="fa fa-edit"></i> <span>Profile</span>
+              <i class="fa fa-edit"></i> <span>Profile YBM</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
@@ -201,15 +165,19 @@
               <li><a href="{{route('prodi.index')}}"><i class="fa fa-circle-o"></i> Program Studi</a></li>
             </ul>
         </li>
-          <li><a href="{{route('alumni.index')}}"><i class="fa fa-users"></i> <span>Alumni</span></a></li>
-          <li><a href="{{route('admin.users.index')}}"><i class="fa fa-user"></i> <span>Users</span></a></li>
+        <li><a href="{{route('alumni.index')}}"><i class="fa fa-users"></i> <span>Alumni</span></a></li>
+        <li><a href="{{route('admin.users.index')}}"><i class="fa fa-user"></i> <span>Users</span></a></li>
           @endcan
-          <li><a href="#"><i class="fa fa-sign-in"></i> <span>Keluar</span></a></li>
+        <li>
+            <a href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                <i class="fa fa-sign-in"></i> <span>Keluar</span></a>
+            </li>
     </section>
-    <!-- /.sidebar -->
-  </aside>
+</aside>
 
-  <!-- Content Wrapper. Contains page content -->
+<!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         @yield('partials.alerts')
         @yield('content')

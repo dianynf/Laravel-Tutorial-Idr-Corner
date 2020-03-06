@@ -39,4 +39,5 @@ Route::resource('/prodi', 'ProdiController');
 Route::resource('/beasiswa', 'BeasiswaController');
 Route::resource('/informasi', 'InformasiController');
 Route::resource('/alumni', 'AlumniController');
+Route::resource('/profilealumni', 'ProfilealumniController');
 // Route::resource('/mahasiswa', 'MahasiswaController');

@@ -33,11 +33,16 @@
                                                 <a href="{{route('admin.users.edit', $user->id)}}" class="btn btn-warning mr-1"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                             @endcan
                                             @can('delete-users')
+                                            <a onclick="deleteHandle({{$user}})" class="btn btn-danger">
+                                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                            </a>
+                                            @endcan
+                                            {{-- @can('delete-users')
                                                 <form action="{{route('admin.users.destroy', $user)}}" method="POST">
                                             @csrf
                                             {{ method_field('DELETE') }}
                                             <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                            @endcan
+                                            @endcan --}}
                                             </form>
                                         </th>
                                     </tr>
@@ -50,4 +55,16 @@
 		</div>
       </div>
     </section>
+@endsection
+
+@section('script')
+    <script>
+        function deleteHandle(users){
+            var { id, email} = users
+
+            $('#formDelete').attr('action', `users/${id}`)
+            $('#ket').html('users'+email)
+            $('#modalDelete').modal('show')
+        }
+    </script>
 @endsection

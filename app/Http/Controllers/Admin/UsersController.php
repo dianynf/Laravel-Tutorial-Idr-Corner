@@ -128,7 +128,7 @@ class UsersController extends Controller
 
         $user->roles()->detach();
         $user->delete();
-
+        session()->flash('sukses', 'user berhasil di hapus');
         return redirect()->route('admin.users.index');
     }
 
