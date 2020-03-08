@@ -31,7 +31,7 @@
                                 <td>{{$alumni->no_hp}}</td>
                                 <td>{{$alumni->beastudi_id}}</td>
                                 <td>{{$alumni->status_kerja}}</td>
-                                <td>{{$alumni->foto}}</td>
+                                <td><img src="{{asset('storage/'.$alumni->foto)}}" width="100px"></td>
                                 <th>
                                     <a href="{{route('alumni.edit', $alumni->id)}}" class="btn btn-warning mr-1">
                                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>

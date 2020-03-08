@@ -18,7 +18,7 @@ class CreateAlumnisTable extends Migration
             $table->String('nama');
             $table->char('jk');
             $table->String('tmp_lahir');
-            $table->timestamp('tgl_lahir');
+            $table->date('tgl_lahir');
             $table->String('email');
             $table->String('no_hp');
             $table->text('alamat');

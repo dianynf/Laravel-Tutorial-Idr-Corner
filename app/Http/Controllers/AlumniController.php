@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Alumni;
 use App\Prodi;
 use App\Beasiswa;
-use App\Http\Requests\AlumniRequest;
+use Illuminate\Http\Request;
+
+// use App\Http\Requests\AlumniRequest;
 
 class AlumniController extends Controller
 {
@@ -41,8 +42,9 @@ class AlumniController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AlumniRequest $request)
+    public function store(Request $request)
     {
+
         $image = $request->foto->store('img');
         Alumni::create([
             'nama' => $request->nama,
@@ -52,11 +54,11 @@ class AlumniController extends Controller
             'email' => $request->email,
             'no_hp' => $request->no_hp,
             'alamat' => $request->alamat,
-            'image' => $image,
+            'foto' => $image,
             'angkatan' => $request->angkatan,
             'status_kerja' => $request->status_kerja,
             'tmp_kerja' => $request->tmp_kerja,
-            'beasiswa_id' => $request->beasiswa_id,
+            'beastudi_id' => $request->beasiswa_id,
             'prodi_id' => $request->prodi_id
         ]);
         session()->flash('sukses', 'Data Berhasil Di Tambahkan');

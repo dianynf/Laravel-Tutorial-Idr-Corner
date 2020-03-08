@@ -65,7 +65,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-calendar"></i>
                       </div>
-                      <input type="text" placeholder="Tanggal Lahir" class="form-control pull-right" id="datepicker" name="tgl_lahir" id="tgl_lahir" class="form-control" value="{{isset($alumni)? $alumni->tgl_lahir : old('tgl_lahir')}}">
+                      <input type="date" placeholder="Tanggal Lahir" class="form-control pull-right" name="tgl_lahir" id="tgl_lahir" class="form-control" value="{{isset($alumni)? $alumni->tgl_lahir : old('tgl_lahir')}}">
                     </div>
                     <!-- /.input group -->
                   </div>
