@@ -33,7 +33,7 @@
                                 <td>{{$alumni->status_kerja}}</td>
                                 <td><img src="{{asset('storage/'.$alumni->foto)}}" width="100px"></td>
                                 <th>
-                                    <a href="{{route('alumni.edit', $alumni->id)}}" class="btn btn-warning mr-1">
+                                    <a href="{{route('alumni.update', $alumni->id)}}" class="btn btn-warning mr-1">
                                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                     </a>
                                     <a onclick="deleteHandle({{$alumni}})" class="btn btn-danger">

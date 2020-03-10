@@ -7,7 +7,7 @@ use App\Prodi;
 use App\Beasiswa;
 use Illuminate\Http\Request;
 
-// use App\Http\Requests\AlumniRequest;
+use App\Http\Requests\AlumniRequest;
 
 class AlumniController extends Controller
 {
@@ -94,7 +94,7 @@ class AlumniController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(AlumniRequest $request, Alumni $alumni)
+    public function update(Request $request, Alumni $alumni)
     {
         $alumni::update([
             'nama' => $request->nama,
