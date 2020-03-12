@@ -111,15 +111,6 @@
                 <div class="form-group">
                     <label for="name">Status Kerja</label><br>
                     @error('status_kerja') <span style="color:red">{{$message}}</span>@enderror
-                    {{-- <input type="text" placeholder="status_kerja" name="status_kerja" id="status_kerja" class="form-control" value="{{isset($alumni)? $alumni->status_kerja : old('status_kerja')}}"> --}}
-                    {{-- <label>
-                        <input type="radio" class="flat-red" checked name="status_kerja" value="1" id="status_kerja" class="form-control" value="{{isset($alumni)? $alumni->status_kerja : old('status_kerja')}}">
-                        <span>Berkerja</span>
-                    </label>
-                    <label>
-                        <input type="radio" class="flat-red" name="status_kerja" id="status_kerja" value="0" class="form-control" value="{{isset($alumni)? $alumni->status_kerja : old('status_kerja')}}">
-                        <span>Belum Berkerja</span>
-                    </label> --}}
                     <label>
                         <input type="radio" class="flat-red form-control" name="status_kerja" id="status_kerja" value="1" checked value="{{isset($alumni)? $alumni->status_kerja : old('status_kerja')}}">
                         <span>Berkerja</span>
